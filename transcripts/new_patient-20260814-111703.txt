@@ -1,0 +1,50 @@
+Scenario   : new_patient (compliance)
+Call SID   : CA76b1be3a068e3154092c29bf9ecfd3cd
+Started    : 2026-08-14T11:17:03.437665
+Testing    : REVENUE: does the agent successfully convert and book a NEW patient (their highest-value workflow), capturing the needed info?
+------------------------------------------------------------
+PATIENT (bot): Oh, okay,
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+PATIENT (bot): Hi, um, I speak English.
+AGENT (Maggie): Para Español, oprima el 2.
+AGENT (Maggie): Thanks for calling Pivot Point Orthopaedics.
+AGENT (Maggie): part of pretty good AI.
+PATIENT (bot): Hi, I'd like to become a new patient and book my first appointment, please.
+AGENT (Maggie): How may I help you today?
+AGENT (Maggie): We're happy to welcome new patients at Pivot Point Orthopedics.
+AGENT (Maggie): I'll help you get started with your first appointment.
+PATIENT (bot): This is for me, I'm booking for myself.
+AGENT (Maggie): May I ask, are you booking this appointment for yourself or for someone else?
+AGENT (Maggie): If you're calling from the number we have on file.
+PATIENT (bot): Actually, my name is Brandon Hale.
+AGENT (Maggie): Am I speaking with Priya?
+AGENT (Maggie): Thanks for letting me know!
+AGENT (Maggie): Please provide your full date of birth.
+PATIENT (bot): Sure, it's January 27th, 2000.
+AGENT (Maggie): Just to confirm.
+AGENT (Maggie): Could you please spell your first and last name for me?
+PATIENT (bot): Of course. It's B-R-A-N-D-O-N, and the last name H-A-L-E.
+AGENT (Maggie): Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us.
+AGENT (Maggie): If you're not sure, just let me know.
+PATIENT (bot): I'm actually a brand-new patient, so I don't have a number on file yet.
+AGENT (Maggie): Thanks for clarifying.
+AGENT (Maggie): Just to be sure, can you confirm your first and last name and your date of birth one more time?
+PATIENT (bot): Sure. It's Brandon Hale, B-R-A-N-D-O-N H-A-L-E, and my date of birth is January 27th, 2000.
+AGENT (Maggie): Please fill them out for me.
+AGENT (Maggie): I have your name as Brandon Hale.
+AGENT (Maggie): Date of birth, January 27, 2000.
+AGENT (Maggie): and your phone number as 848-
+AGENT (Maggie): 308
+AGENT (Maggie): 7 6 8
+AGENT (Maggie): Seven.
+PATIENT (bot): Actually, I haven't given my phone number yet.
+AGENT (Maggie): Is all of that correct?
+PATIENT (bot): Yes, the name and date of birth are correct. I can give you my phone number now if you'd like.
+AGENT (Maggie): Thank you, Brandon.
+AGENT (Maggie): Since you're a brand new patient, I'll need to connect you with our patient support team to complete your registration.
+AGENT (Maggie): and book your first appointment.
+AGENT (Maggie): Transferring you now. Thank you.
+AGENT (Maggie): Please stay on the line while I transfer you.
+AGENT (Maggie): Hello, you've reached the pretty good AI test line.
+AGENT (Maggie): Goodbye.
+PATIENT (bot): Oh, all right. Thank you. Take care.

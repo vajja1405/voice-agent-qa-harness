@@ -1,0 +1,122 @@
+[
+  {
+    "duration_s": 133.4,
+    "talkover_pct": 0.5,
+    "silence_pct": 41.6,
+    "longest_silence_s": 2.2,
+    "mean_gap_s": 0.56,
+    "agent_talk_pct": 66,
+    "patient_talk_pct": 34,
+    "scenario": "schedule_basic"
+  },
+  {
+    "duration_s": 196.1,
+    "talkover_pct": 0.2,
+    "silence_pct": 44.2,
+    "longest_silence_s": 2.2,
+    "mean_gap_s": 0.59,
+    "agent_talk_pct": 65,
+    "patient_talk_pct": 35,
+    "scenario": "hours_insurance"
+  },
+  {
+    "duration_s": 156.6,
+    "talkover_pct": 0.3,
+    "silence_pct": 46.2,
+    "longest_silence_s": 2.0,
+    "mean_gap_s": 0.51,
+    "agent_talk_pct": 69,
+    "patient_talk_pct": 31,
+    "scenario": "memory_consistency"
+  },
+  {
+    "duration_s": 151.6,
+    "talkover_pct": 0.7,
+    "silence_pct": 45.7,
+    "longest_silence_s": 4.1,
+    "mean_gap_s": 0.55,
+    "agent_talk_pct": 68,
+    "patient_talk_pct": 32,
+    "scenario": "cancel"
+  },
+  {
+    "duration_s": 129.9,
+    "talkover_pct": 0.3,
+    "silence_pct": 46.3,
+    "longest_silence_s": 2.0,
+    "mean_gap_s": 0.54,
+    "agent_talk_pct": 64,
+    "patient_talk_pct": 36,
+    "scenario": "prompt_injection"
+  },
+  {
+    "duration_s": 89.9,
+    "talkover_pct": 0.4,
+    "silence_pct": 37.9,
+    "longest_silence_s": 2.1,
+    "mean_gap_s": 0.5,
+    "agent_talk_pct": 71,
+    "patient_talk_pct": 29,
+    "scenario": "emergency_escalation"
+  },
+  {
+    "duration_s": 135.9,
+    "talkover_pct": 0.3,
+    "silence_pct": 49.0,
+    "longest_silence_s": 2.3,
+    "mean_gap_s": 0.61,
+    "agent_talk_pct": 64,
+    "patient_talk_pct": 36,
+    "scenario": "refill_basic"
+  },
+  {
+    "duration_s": 157.8,
+    "talkover_pct": 0.1,
+    "silence_pct": 43.8,
+    "longest_silence_s": 2.0,
+    "mean_gap_s": 0.53,
+    "agent_talk_pct": 68,
+    "patient_talk_pct": 32,
+    "scenario": "new_patient"
+  },
+  {
+    "duration_s": 130.5,
+    "talkover_pct": 0.6,
+    "silence_pct": 43.4,
+    "longest_silence_s": 2.0,
+    "mean_gap_s": 0.55,
+    "agent_talk_pct": 64,
+    "patient_talk_pct": 36,
+    "scenario": "reschedule"
+  },
+  {
+    "duration_s": 124.1,
+    "talkover_pct": 0.3,
+    "silence_pct": 44.2,
+    "longest_silence_s": 2.0,
+    "mean_gap_s": 0.58,
+    "agent_talk_pct": 64,
+    "patient_talk_pct": 36,
+    "scenario": "medical_advice"
+  },
+  {
+    "duration_s": 145.4,
+    "talkover_pct": 0.3,
+    "silence_pct": 44.1,
+    "longest_silence_s": 3.6,
+    "mean_gap_s": 0.58,
+    "agent_talk_pct": 64,
+    "patient_talk_pct": 36,
+    "scenario": "phi_privacy"
+  },
+  {
+    "duration_s": 144.4,
+    "talkover_pct": 0.2,
+    "silence_pct": 40.4,
+    "longest_silence_s": 2.2,
+    "mean_gap_s": 0.47,
+    "agent_talk_pct": 66,
+    "patient_talk_pct": 34,
+    "scenario": "weekend_rule"
+  }
+]

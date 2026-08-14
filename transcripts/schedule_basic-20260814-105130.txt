@@ -1,0 +1,37 @@
+Scenario   : schedule_basic (normal)
+Call SID   : CA0df19c878866512ee3a8ccaf23e3f9d5
+Started    : 2026-08-14T10:51:30.396890
+Testing    : Baseline: can the agent hold a natural conversation and complete a simple new-appointment booking, confirming the final slot?
+------------------------------------------------------------
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+AGENT (Maggie): Para Español, oprima el 2.
+PATIENT (bot): Hi, um
+AGENT (Maggie): Thanks for calling Pivot Point Orthopaedics.
+PATIENT (bot): Oh, thank you
+AGENT (Maggie): Part of pretty good AI.
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Hi, I’d like to book a new appointment with a primary care doctor next week, preferably Tuesday morning.
+AGENT (Maggie): I see you're calling from the number we have on file.
+PATIENT (bot): Yes, that’s right, Priya Sharma.
+AGENT (Maggie): My CD with Priya.
+PATIENT (bot): Sure, it's March 4th, 1990.
+AGENT (Maggie): please provide your date of birth.
+AGENT (Maggie): Are you looking to establish care as a new patient?
+AGENT (Maggie): Or is this for a specific concern or follow-up?
+PATIENT (bot): I'm looking to establish care as a new patient.
+AGENT (Maggie): Do you have a specific provider in mind or would you like to see the first available primary care doctor?
+PATIENT (bot): I’m fine with the first available primary care doctor, as long as it’s next Tuesday morning if possible.
+AGENT (Maggie): Let me check for new patient consultation openings with the first available primary care doctor next week.
+PATIENT (bot): Okay, sounds good, I’ll wait.
+AGENT (Maggie): You already have.
+PATIENT (bot): Oh, okay. What did you find for Tuesday morning?
+AGENT (Maggie): You already have a new patient appointment booked for Tuesday, August 18th at 9 a.m. Would you like to keep this appointment, reschedule it, or cancel it?
+PATIENT (bot): I’m sorry, I don’t recall booking that. Could we double-check or set a new one just to be sure?
+AGENT (Maggie): You have a new patient appointment already set for Tuesday, August 18th at 9 a.m. The system won't allow a second new patient appointment.
+AGENT (Maggie): Would you like to reschedule or cancel the existing one, or do you want to keep it as-is?
+PATIENT (bot): Oh, I must have forgotten. Let’s keep the existing appointment as it is. Thank you for your help.
+AGENT (Maggie): You're all set for Tuesday, August 18th.
+AGENT (Maggie): 9 a.m.
+PATIENT (bot): Thanks, you too. Take care.
+AGENT (Maggie): Have a great day!
+AGENT (Maggie): If you need to make any changes, just let us know.

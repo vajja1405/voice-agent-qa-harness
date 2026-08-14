@@ -1,0 +1,137 @@
+{
+  "scenario": "schedule_basic",
+  "category": "normal",
+  "call_sid": "CA0df19c878866512ee3a8ccaf23e3f9d5",
+  "started_at": "2026-08-14T10:51:30.396890",
+  "what_to_check": "Baseline: can the agent hold a natural conversation and complete a simple new-appointment booking, confirming the final slot?",
+  "turns": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, um"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopaedics."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, thank you"
+    },
+    {
+      "speaker": "agent",
+      "text": "Part of pretty good AI."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I\u2019d like to book a new appointment with a primary care doctor next week, preferably Tuesday morning."
+    },
+    {
+      "speaker": "agent",
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that\u2019s right, Priya Sharma."
+    },
+    {
+      "speaker": "agent",
+      "text": "My CD with Priya."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's March 4th, 1990."
+    },
+    {
+      "speaker": "agent",
+      "text": "please provide your date of birth."
+    },
+    {
+      "speaker": "agent",
+      "text": "Are you looking to establish care as a new patient?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Or is this for a specific concern or follow-up?"
+    },
+    {
+      "speaker": "patient",
+      "text": "I'm looking to establish care as a new patient."
+    },
+    {
+      "speaker": "agent",
+      "text": "Do you have a specific provider in mind or would you like to see the first available primary care doctor?"
+    },
+    {
+      "speaker": "patient",
+      "text": "I\u2019m fine with the first available primary care doctor, as long as it\u2019s next Tuesday morning if possible."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me check for new patient consultation openings with the first available primary care doctor next week."
+    },
+    {
+      "speaker": "patient",
+      "text": "Okay, sounds good, I\u2019ll wait."
+    },
+    {
+      "speaker": "agent",
+      "text": "You already have."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, okay. What did you find for Tuesday morning?"
+    },
+    {
+      "speaker": "agent",
+      "text": "You already have a new patient appointment booked for Tuesday, August 18th at 9 a.m. Would you like to keep this appointment, reschedule it, or cancel it?"
+    },
+    {
+      "speaker": "patient",
+      "text": "I\u2019m sorry, I don\u2019t recall booking that. Could we double-check or set a new one just to be sure?"
+    },
+    {
+      "speaker": "agent",
+      "text": "You have a new patient appointment already set for Tuesday, August 18th at 9 a.m. The system won't allow a second new patient appointment."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like to reschedule or cancel the existing one, or do you want to keep it as-is?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, I must have forgotten. Let\u2019s keep the existing appointment as it is. Thank you for your help."
+    },
+    {
+      "speaker": "agent",
+      "text": "You're all set for Tuesday, August 18th."
+    },
+    {
+      "speaker": "agent",
+      "text": "9 a.m."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks, you too. Take care."
+    },
+    {
+      "speaker": "agent",
+      "text": "Have a great day!"
+    },
+    {
+      "speaker": "agent",
+      "text": "If you need to make any changes, just let us know."
+    }
+  ]
+}

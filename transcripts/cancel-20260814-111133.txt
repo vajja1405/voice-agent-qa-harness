@@ -1,0 +1,58 @@
+Scenario   : cancel (normal)
+Call SID   : CA35d1fa8343b811a269372565d004bf68
+Started    : 2026-08-14T11:11:33.000813
+Testing    : Does the agent handle a cancellation cleanly and set rebooking expectations?
+------------------------------------------------------------
+PATIENT (bot): Hi, um, I understand.
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+PATIENT (bot): Hi, I actually need some help in English right now.
+AGENT (Maggie): Para Español, oprima el 2.
+AGENT (Maggie): Thanks for calling Pivot Point Orthopedics.
+AGENT (Maggie): part of pretty good AI.
+PATIENT (bot): Hi, I need to cancel my upcoming appointment. I'll be traveling.
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Yeah, that’s
+AGENT (Maggie): I see you're calling from the number we have on file.
+PATIENT (bot): No, this is Elena Torres.
+AGENT (Maggie): Am I speaking with Priya?
+PATIENT (bot): Sure, it's November 2nd, 1978.
+AGENT (Maggie): please provide your date of birth.
+AGENT (Maggie): just to confirm.
+PATIENT (bot): Yes, that's
+PATIENT (bot): Yes, that's correct.
+AGENT (Maggie): I have your name as Aleida Torres and your date of birth as November 2, 1978.
+AGENT (Maggie): Is that correct?
+PATIENT (bot): Sure. It’s E-L-E-N-A, and T-O-R-R-E-S.
+AGENT (Maggie): If so, could you please spell your first and last name for me?
+AGENT (Maggie): Would you like to use your phone number to look up your record?
+AGENT (Maggie): If so,
+PATIENT (bot): Sure, my number
+AGENT (Maggie): please provide the number you have on file with us.
+AGENT (Maggie): if you're not sure.
+PATIENT (bot): I’m
+AGENT (Maggie): I can confirm your name and date of birth again.
+PATIENT (bot): Let's go with my name and date of birth to find the record.
+AGENT (Maggie): Which would you prefer?
+PATIENT (bot): Sure, it's
+AGENT (Maggie): Please spell your first and last name for me one more time.
+AGENT (Maggie): confirm your date of birth.
+PATIENT (bot): E-L-E-N-A, T-O-R-R-E-S, and my date of birth is November 2nd, 1978.
+AGENT (Maggie): I have your phone number, it's 848-308-...
+AGENT (Maggie): 7 6 8 7
+AGENT (Maggie): and your date of birth is November 2, 1978.
+AGENT (Maggie): Is that correct?
+PATIENT (bot): Yes, that's correct.
+AGENT (Maggie): Also, could you please confirm the spelling of your first name?
+PATIENT (bot): It’s actually
+AGENT (Maggie): I heard D-L-E-N-A.
+AGENT (Maggie): Is that right or should it be E-L-E-N?
+PATIENT (bot): It's E-L-E-N-A.
+AGENT (Maggie): I'm unable to find your record in our system right now.
+PATIENT (bot): That sounds good.
+AGENT (Maggie): I can connect you to our patient support team for help with canceling your appointment.
+PATIENT (bot): Yes, please transfer me. Also, can you let me know what I need to do to rebook later?
+AGENT (Maggie): Would you like me to transfer you?
+PATIENT (bot): Thank you, I appreciate it.
+AGENT (Maggie): Transferring you now. Thank you.
+AGENT (Maggie): Hello, you've reached the pretty good AI test line, goodbye.
+PATIENT (bot): Oh, all right, thank you. Goodbye.

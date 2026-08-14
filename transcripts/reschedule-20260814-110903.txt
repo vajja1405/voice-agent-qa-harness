@@ -1,0 +1,53 @@
+Scenario   : reschedule (normal)
+Call SID   : CA8c70c24b1b64e4d98e956c3ea0cc3758
+Started    : 2026-08-14T11:09:03.219935
+Testing    : Can the agent handle a reschedule and confirm the new slot correctly?
+------------------------------------------------------------
+PATIENT (bot): Sure, no problem. Hi
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+PATIENT (bot): Hi, I’d like to talk to
+AGENT (Maggie): Para Español, oprima el 2.
+AGENT (Maggie): Thanks for calling Pivot Point Orthopedics.
+AGENT (Maggie): part of pretty good AI.
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Hi, I’ve got an appointment this Thursday, but I need to reschedule to early next week. Could you help me with that?
+PATIENT (bot): Great,
+AGENT (Maggie): I can assist you.
+AGENT (Maggie): May I have your full name and day of birth?
+PATIENT (bot): Sure, it’s Marcus Bell, date of birth is July 22nd, 1985.
+AGENT (Maggie): 1985.
+AGENT (Maggie): Just to confirm, I have your name as Marcus Bell and your date of birth as July 22nd.
+PATIENT (bot): That's correct. Now,
+AGENT (Maggie): Is that correct?
+AGENT (Maggie): If so, could you please spell your first and last name for me?
+PATIENT (bot): Sure. First name: M-A-R-C-U-S, last name: B-E-L-L.
+AGENT (Maggie): Would you like to use your phone number to look up your record?
+PATIENT (bot): Sure, my number is
+AGENT (Maggie): If so, please provide the number you have on file with us.
+PATIENT (bot): No, I’ve got
+AGENT (Maggie): If you're not sure, I can confirm your name and date of birth again.
+PATIENT (bot): Please go ahead and look it up by my name and date of birth.
+AGENT (Maggie): Let me know how you'd like to proceed.
+AGENT (Maggie): Let's confirm your details one more time.
+AGENT (Maggie): Please spell your first and last name.
+AGENT (Maggie): and confirm your date of birth.
+PATIENT (bot): Sure, first name: M-A-R-C-U-S, last name: B-E-L-L, and my date of birth is July 22nd, 1985.
+AGENT (Maggie): I have your phone number as 848-
+AGENT (Maggie): 308
+PATIENT (bot): That's right. Let's go ahead and find a
+AGENT (Maggie): 7 6 8 7
+AGENT (Maggie): Your date of birth
+PATIENT (bot): My date of birth is July 22nd, 1985.
+AGENT (Maggie): Thanks for confirming
+PATIENT (bot): All right, thanks.
+AGENT (Maggie): I'm unable to locate your record right now, so I'll connect you to our patient support team for further help.
+PATIENT (bot): Sure, I’ll hold on.
+AGENT (Maggie): Please stay on the line.
+PATIENT (bot): Thank you,
+AGENT (Maggie): Transferring you now, thank you.
+PATIENT (bot): Hi, I’m still here. Just wanted to confirm, can we look at rescheduling my appointment
+AGENT (Maggie): BEEP
+AGENT (Maggie): Hello
+AGENT (Maggie): you've reached the pretty good AI test line.
+AGENT (Maggie): Goodbye.
+PATIENT (bot): Oh, all right. Thanks for your time. Take care.

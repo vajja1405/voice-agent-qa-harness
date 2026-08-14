@@ -1,0 +1,201 @@
+{
+  "scenario": "reschedule",
+  "category": "normal",
+  "call_sid": "CA8c70c24b1b64e4d98e956c3ea0cc3758",
+  "started_at": "2026-08-14T11:09:03.219935",
+  "what_to_check": "Can the agent handle a reschedule and confirm the new slot correctly?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Sure, no problem. Hi"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I\u2019d like to talk to"
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "part of pretty good AI."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I\u2019ve got an appointment this Thursday, but I need to reschedule to early next week. Could you help me with that?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Great,"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can assist you."
+    },
+    {
+      "speaker": "agent",
+      "text": "May I have your full name and day of birth?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it\u2019s Marcus Bell, date of birth is July 22nd, 1985."
+    },
+    {
+      "speaker": "agent",
+      "text": "1985."
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm, I have your name as Marcus Bell and your date of birth as July 22nd."
+    },
+    {
+      "speaker": "patient",
+      "text": "That's correct. Now,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that correct?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so, could you please spell your first and last name for me?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure. First name: M-A-R-C-U-S, last name: B-E-L-L."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like to use your phone number to look up your record?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, my number is"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so, please provide the number you have on file with us."
+    },
+    {
+      "speaker": "patient",
+      "text": "No, I\u2019ve got"
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're not sure, I can confirm your name and date of birth again."
+    },
+    {
+      "speaker": "patient",
+      "text": "Please go ahead and look it up by my name and date of birth."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me know how you'd like to proceed."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let's confirm your details one more time."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please spell your first and last name."
+    },
+    {
+      "speaker": "agent",
+      "text": "and confirm your date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, first name: M-A-R-C-U-S, last name: B-E-L-L, and my date of birth is July 22nd, 1985."
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your phone number as 848-"
+    },
+    {
+      "speaker": "agent",
+      "text": "308"
+    },
+    {
+      "speaker": "patient",
+      "text": "That's right. Let's go ahead and find a"
+    },
+    {
+      "speaker": "agent",
+      "text": "7 6 8 7"
+    },
+    {
+      "speaker": "agent",
+      "text": "Your date of birth"
+    },
+    {
+      "speaker": "patient",
+      "text": "My date of birth is July 22nd, 1985."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for confirming"
+    },
+    {
+      "speaker": "patient",
+      "text": "All right, thanks."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm unable to locate your record right now, so I'll connect you to our patient support team for further help."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, I\u2019ll hold on."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please stay on the line."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now, thank you."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I\u2019m still here. Just wanted to confirm, can we look at rescheduling my appointment"
+    },
+    {
+      "speaker": "agent",
+      "text": "BEEP"
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello"
+    },
+    {
+      "speaker": "agent",
+      "text": "you've reached the pretty good AI test line."
+    },
+    {
+      "speaker": "agent",
+      "text": "Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, all right. Thanks for your time. Take care."
+    }
+  ]
+}

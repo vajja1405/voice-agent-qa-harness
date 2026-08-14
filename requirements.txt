@@ -1,0 +1,19 @@
+# --- Web server that Twilio talks to (serves TwiML + hosts the media WebSocket) ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# --- Raw WebSocket client we use to talk to OpenAI's Realtime API ---
+# (We use raw websockets instead of a heavy SDK so every message is visible and explainable.)
+websockets==13.1
+
+# --- Places the outbound phone call to the clinic's test agent ---
+twilio==9.4.1
+
+# --- Downloads the call recordings (MP3) from Twilio ---
+requests==2.32.3
+
+# --- Loads secrets from the .env file so we never hard-code API keys ---
+python-dotenv==1.0.1
+
+# --- Used by the analyzer/grader (M4): Claude is the LLM "judge" that scores transcripts ---
+anthropic==0.42.0

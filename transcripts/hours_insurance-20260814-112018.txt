@@ -1,0 +1,73 @@
+Scenario   : hours_insurance (normal)
+Call SID   : CA2b0c84df140ab61d57142171ef38bec1
+Started    : 2026-08-14T11:20:18.145821
+Testing    : Does the agent answer hours/location/insurance accurately, or guess/make things up?
+------------------------------------------------------------
+PATIENT (bot): Hi, um,
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+AGENT (Maggie): Para Español, oprima el 2.
+AGENT (Maggie): Thanks for calling Pivot Point Orthopedics.
+AGENT (Maggie): part of pretty good AI.
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Hi there, I’m just trying to get a few details. Can you tell me your office hours and where you’re located?
+AGENT (Maggie): Our clinic is open Monday through Friday.
+PATIENT (bot): Okay, got
+AGENT (Maggie): Hours are 9 a.m. to 4 p.m. on Monday, Tuesday, and Thursday.
+PATIENT (bot): And what about
+AGENT (Maggie): 12 p.m. to 7 p.m. on Wednesday.
+AGENT (Maggie): 9 a.m. to 12 p.m. on Friday.
+AGENT (Maggie): We're located at...
+AGENT (Maggie): Austin.
+AGENT (Maggie): 1, 2, 3, 4, Recovery Way, Suite 200.
+AGENT (Maggie): Is there anything else you'd like to know?
+PATIENT (bot): Yeah, one more thing—do you take Blue Cross Blue Shield PPO insurance?
+AGENT (Maggie): Let me check on your insurance question.
+AGENT (Maggie): May I ask if you're calling for yourself or on behalf of someone else?
+PATIENT (bot): I'm calling for myself. My name’s Grace Lin, and my date of birth is April 9th, 1995.
+AGENT (Maggie): I see you're calling from the number we have on file.
+PATIENT (bot): Oh, actually,
+PATIENT (bot): No, I'm Grace Lin. That’s me.
+AGENT (Maggie): Am I speaking with Priya?
+PATIENT (bot): Yeah, that’s right.
+AGENT (Maggie): at grace.
+PATIENT (bot): Sure, it’s April 9th, 1995.
+AGENT (Maggie): Can you please confirm your full date of birth?
+AGENT (Maggie): Could you please spell out your first and last name for me, just to make sure I have it correct?
+PATIENT (bot): Of course, it's G-R-A-C-E for the first name, and L-I-N for the last name.
+AGENT (Maggie): If so,
+AGENT (Maggie): Would you like me to look up your record using the phone number you have on file with us?
+AGENT (Maggie): please tell me that number.
+AGENT (Maggie): If you're not sure, I can confirm your name and date of birth again instead.
+AGENT (Maggie): Which would you prefer?
+PATIENT (bot): I'd prefer to confirm with name and date of birth, if that's okay.
+AGENT (Maggie): No problem.
+AGENT (Maggie): Please spell out your first and last name one more time.
+AGENT (Maggie): and confirm your full date of birth.
+PATIENT (bot): Sure, it's Grace Lin, G-R-A-C-E L-I-N, and my date of birth is April 9th, 1995.
+AGENT (Maggie): just to confirm.
+PATIENT (bot): It's L-I
+AGENT (Maggie): Is your last name spelled L-I-N or L-I-M?
+PATIENT (bot): Yes, April
+AGENT (Maggie): And your date of birth is April 9th.
+PATIENT (bot): That's correct, 1995.
+AGENT (Maggie): Nike 95, correct?
+AGENT (Maggie): I have your phone number as 848...
+AGENT (Maggie): 308
+PATIENT (bot): Actually, I haven't
+AGENT (Maggie): 7 6 8 7
+AGENT (Maggie): and your date of birth.
+AGENT (Maggie): as April 9th.
+AGENT (Maggie): 1995.
+AGENT (Maggie): Is that correct?
+PATIENT (bot): Yes, that's correct. Could you let me know now if you take Blue Cross Blue Shield PPO?
+AGENT (Maggie): I can't proceed further right now, but I can make sure our clinic support team follows up with you.
+PATIENT (bot): I'd really appreciate that, thank you. That works.
+AGENT (Maggie): Would you like me to have someone contact you about your insurance question?
+PATIENT (bot): Thank you so
+AGENT (Maggie): Transferring you now.
+PATIENT (bot): You're welcome. Have a great day.
+AGENT (Maggie): Thank you.
+AGENT (Maggie): Hello.
+AGENT (Maggie): you've reached the pretty good AI test line.
+PATIENT (bot): Goodbye, take care.
+AGENT (Maggie): Goodbye.

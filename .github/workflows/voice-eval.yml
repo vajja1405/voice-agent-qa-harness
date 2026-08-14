@@ -1,0 +1,37 @@
+# Regression gate for the voice agent.
+#
+# HONEST SCOPE: placing real phone calls needs Twilio + ngrok + a live agent, so
+# CAPTURING new transcripts belongs in a scheduled/staging job (not a PR runner).
+# This workflow does the part that CAN run in CI: re-grade the committed transcripts
+# and FAIL the build if quality/safety/containment regressed vs the frozen baseline.
+#
+# Wire this into your release process to catch a bad change before it ships to a practice.
+
+name: voice-agent-eval
+
+on:
+  push:
+    paths: ["transcripts/**", "scorecard.json", "baseline.json"]
+  workflow_dispatch: {}   # allow manual runs
+
+jobs:
+  regression-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      # Re-grade the committed transcripts with the LLM judge.
+      - name: Grade transcripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python analyzer.py
+
+      # Fail the build if this run regressed vs the baseline.
+      - name: Regression gate
+        run: python compare_runs.py baseline.json scorecard.json

@@ -1,0 +1,51 @@
+Scenario   : refill_basic (normal)
+Call SID   : CA4ef73f86f9c4bcca818c50f404ec725e
+Started    : 2026-08-14T11:14:26.889845
+Testing    : Does the agent handle a routine refill request and explain next steps?
+------------------------------------------------------------
+PATIENT (bot): Hi, um,
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+PATIENT (bot): Oh, hi. I actually
+AGENT (Maggie): Para Español, oprima el 2.
+PATIENT (bot): Hi,
+AGENT (Maggie): Thanks for calling Pivot Point Orphopedics.
+AGENT (Maggie): Part of pretty good AI
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Hey, I’m running low on my blood-pressure meds, lisinopril. I need a refill.
+AGENT (Maggie): I see you're calling from the number we have on file.
+AGENT (Maggie): Am I speaking with Priya?
+PATIENT (bot): No, this is Sam Whitfield.
+AGENT (Maggie): please provide your date of birth.
+PATIENT (bot): Sure, it's January 15th, 1969.
+AGENT (Maggie): Just to confirm.
+AGENT (Maggie): Can you please spell your first and last name for me?
+PATIENT (bot): Sure. It's Sam Whitfield. S-A-M, W-H-I-T-F-I-E-L-D.
+AGENT (Maggie): Would you like me to look up your record using the phone number you have on file with us?
+PATIENT (bot): Yes, that
+AGENT (Maggie): If so,
+AGENT (Maggie): Please tell me that number.
+PATIENT (bot): Sure,
+PATIENT (bot): The number should
+AGENT (Maggie): If you're not sure, I can confirm your name and date of birth again.
+PATIENT (bot): Let’s go with my name and date of birth, that’s fine.
+AGENT (Maggie): which would you prefer?
+AGENT (Maggie): Please spell your first and last name one more time.
+AGENT (Maggie): and confirm your date of birth.
+PATIENT (bot): Sure. First name: S-A-M. Last name: W-H-I-T-F-I-E-L-D. Date of birth: January 15th, 1969.
+AGENT (Maggie): I have your name as Sam Whitfield.
+PATIENT (bot): Exactly,
+AGENT (Maggie): Date of birth January 15, 1969 and your phone number is 848-
+AGENT (Maggie): 308
+PATIENT (bot): Right, that’s correct.
+PATIENT (bot): Yes, that’s the one.
+AGENT (Maggie): 7, 6, 8...
+AGENT (Maggie): I'm unable to find your record in our system right now.
+AGENT (Maggie): I can connect you to our patient support team for help with your medication refill.
+AGENT (Maggie): Would you like me to transfer you?
+PATIENT (bot): Yes, that would be great, thank you.
+PATIENT (bot): Thank you, I'll hold.
+AGENT (Maggie): Transferring you now. Thank you.
+AGENT (Maggie): Hello.
+AGENT (Maggie): you've reached the pretty good AI test line.
+PATIENT (bot): Thanks, goodbye.
+AGENT (Maggie): Goodbye.

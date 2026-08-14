@@ -1,0 +1,46 @@
+Scenario   : weekend_rule (rule_discovery)
+Call SID   : CAf610c41f272670861dad8355607dcdcf
+Started    : 2026-08-14T11:00:57.453988
+Testing    : RULE CONFORMANCE: does the agent respect office-hours rules (e.g., closed weekends) instead of blindly booking an invalid slot?
+------------------------------------------------------------
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+AGENT (Maggie): Para Español, oprima el 2.
+PATIENT (bot): Hi, um, I’m looking to
+PATIENT (bot): Hi there,
+AGENT (Maggie): Thanks for calling Pivot Point Orthopedics.
+AGENT (Maggie): part of Pretty Good AI. How may I help you today?
+PATIENT (bot): Hey, I’m trying to set up an appointment for this Sunday at 10 a.m. Could you help me with that?
+AGENT (Maggie): I see you're calling from the number we have on file.
+AGENT (Maggie): Am I thinking with Priya?
+PATIENT (bot): Actually, I'm Tom Nguyen. I just need to book that Sunday 10 a.m. appointment. Could you check that for me?
+AGENT (Maggie): I'll need your full name and date of birth to look up your chart.
+AGENT (Maggie): Could you please provide your first and last name along with your date of birth?
+PATIENT (bot): Sure, it's Tom Nguyen, and my date of birth is February 28th, 1990.
+AGENT (Maggie): Just to confirm.
+AGENT (Maggie): I'd have your name as Tom Muin and your date of birth as February 28th, 1990.
+AGENT (Maggie): Is that correct?
+AGENT (Maggie): and so we can move forward.
+AGENT (Maggie): If not, please spell out your first and last name.
+AGENT (Maggie): and confirm your date of birth.
+PATIENT (bot): Yes, that’s correct: Tom Nguyen, and my birthdate is February 28, 1990.
+AGENT (Maggie): Would you like me to look up your record using your phone number?
+AGENT (Maggie): If so, please provide the number you have on file with us.
+AGENT (Maggie): If you're not sure, just confirm your first and last name by spelling them out along with your date of birth.
+PATIENT (bot): Sure, my first name is spelled T-O-M, and last name N-G-U-Y-E-N. Date of birth is 02-28-1990.
+AGENT (Maggie): I have your name as Tom Nguyen, date of birth February 28, 1990.
+AGENT (Maggie): and your phone number as 848.
+AGENT (Maggie): 3-0-8.
+AGENT (Maggie): 7 6 8 7
+PATIENT (bot): Actually,
+AGENT (Maggie): Is all of that correct?
+PATIENT (bot): Yes, that’s all correct. Now, can we go ahead and book that Sunday 10 a.m. appointment?
+AGENT (Maggie): I'm unable to find your record in our system, so I can't book the appointment right now.
+AGENT (Maggie): I'll connect you to our patient support team for help.
+PATIENT (bot): I’d appreciate that, thanks. I’ll hold.
+AGENT (Maggie): Please stay on the line.
+PATIENT (bot): Oh, wait, before you go—if Sunday’s not available, can you tell me the next available weekday appointment?
+AGENT (Maggie): Can I phone you now? Thank you.
+AGENT (Maggie): Hello.
+AGENT (Maggie): you've reached the pretty good AI test line.
+AGENT (Maggie): Goodbye.
+PATIENT (bot): Thanks for your help, goodbye.

@@ -1,0 +1,245 @@
+{
+  "scenario": "memory_consistency",
+  "category": "memory",
+  "call_sid": "CA33a6d98a7eb2857c27bdb474ab5e8dc3",
+  "started_at": "2026-08-14T11:03:39.812804",
+  "what_to_check": "MEMORY: does the agent RETAIN and use earlier context within the same call (afternoon-only, new insurance), or forget/contradict itself?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Oh, sure,"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hey, um, so my insurance just changed to"
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Fiva Point Orthopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "Part of pretty good"
+    },
+    {
+      "speaker": "agent",
+      "text": "A.I."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, yeah, I\u2019m looking to book a new appointment. Just so you know, my insurance just changed to Aetna, and mornings never work for me, only afternoons."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it\u2019s David"
+    },
+    {
+      "speaker": "agent",
+      "text": "Can I get your full name and date of birth?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Okafor, and my date of birth is August 30th, 1975."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll look up your chart before we continue."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks"
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you please provide your first name as well?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Of course, my first name is David."
+    },
+    {
+      "speaker": "patient",
+      "text": "Yeah, that's"
+    },
+    {
+      "speaker": "agent",
+      "text": "just to confirm."
+    },
+    {
+      "speaker": "patient",
+      "text": "That's right,"
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your name as David Okafor."
+    },
+    {
+      "speaker": "agent",
+      "text": "and your date of birth is August 30th, 1975."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that correct?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so, we can move forward."
+    },
+    {
+      "speaker": "agent",
+      "text": "If not, please spell out your first and last name."
+    },
+    {
+      "speaker": "patient",
+      "text": "That's correct, everything's right."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for confirming"
+    },
+    {
+      "speaker": "patient",
+      "text": "No problem, thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "One moment while I pull up your chart."
+    },
+    {
+      "speaker": "agent",
+      "text": "You're welcome."
+    },
+    {
+      "speaker": "patient",
+      "text": "Great, afternoons are what I need."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me check for available afternoon appointments for you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Understood."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks, and"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll look for afternoon openings and share the next available option with you."
+    },
+    {
+      "speaker": "agent",
+      "text": "One moment."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, take your time."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for your patience"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll have those afternoon options for you shortly."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks. And just to confirm, you\u2019ve got my new insurance on file, right?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll check on your insurance details as soon as I access your chart."
+    },
+    {
+      "speaker": "agent",
+      "text": "To help me find your record, would you like to use the phone number you have on file with us?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so,"
+    },
+    {
+      "speaker": "agent",
+      "text": "please provide that number."
+    },
+    {
+      "speaker": "patient",
+      "text": "I\u2019d prefer"
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're not sure, I can confirm your name and date of birth again."
+    },
+    {
+      "speaker": "agent",
+      "text": "Which would you prefer?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Let\u2019s confirm with my name and date of birth again: David Okafor, August 30th, 1975."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm unable to access your chart right now."
+    },
+    {
+      "speaker": "agent",
+      "text": "So I can't."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, I"
+    },
+    {
+      "speaker": "agent",
+      "text": "confirm your insurance or book your appointment."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll connect you to our patient support team for help."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please stay on the line."
+    },
+    {
+      "speaker": "patient",
+      "text": "Alright, I\u2019ll hold."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you, I appreciate it."
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now, thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello."
+    },
+    {
+      "speaker": "patient",
+      "text": "Goodbye. Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "You've reached the Pretty Good AI test line. Goodbye."
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "scenario": "refill_basic",
+  "category": "normal",
+  "call_sid": "CA4ef73f86f9c4bcca818c50f404ec725e",
+  "started_at": "2026-08-14T11:14:26.889845",
+  "what_to_check": "Does the agent handle a routine refill request and explain next steps?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Hi, um,"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, hi. I actually"
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orphopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "Part of pretty good AI"
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hey, I\u2019m running low on my blood-pressure meds, lisinopril. I need a refill."
+    },
+    {
+      "speaker": "agent",
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Priya?"
+    },
+    {
+      "speaker": "patient",
+      "text": "No, this is Sam Whitfield."
+    },
+    {
+      "speaker": "agent",
+      "text": "please provide your date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's January 15th, 1969."
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm."
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you please spell your first and last name for me?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure. It's Sam Whitfield. S-A-M, W-H-I-T-F-I-E-L-D."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using the phone number you have on file with us?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Please tell me that number."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure,"
+    },
+    {
+      "speaker": "patient",
+      "text": "The number should"
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're not sure, I can confirm your name and date of birth again."
+    },
+    {
+      "speaker": "patient",
+      "text": "Let\u2019s go with my name and date of birth, that\u2019s fine."
+    },
+    {
+      "speaker": "agent",
+      "text": "which would you prefer?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Please spell your first and last name one more time."
+    },
+    {
+      "speaker": "agent",
+      "text": "and confirm your date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure. First name: S-A-M. Last name: W-H-I-T-F-I-E-L-D. Date of birth: January 15th, 1969."
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your name as Sam Whitfield."
+    },
+    {
+      "speaker": "patient",
+      "text": "Exactly,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Date of birth January 15, 1969 and your phone number is 848-"
+    },
+    {
+      "speaker": "agent",
+      "text": "308"
+    },
+    {
+      "speaker": "patient",
+      "text": "Right, that\u2019s correct."
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that\u2019s the one."
+    },
+    {
+      "speaker": "agent",
+      "text": "7, 6, 8..."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm unable to find your record in our system right now."
+    },
+    {
+      "speaker": "agent",
+      "text": "I can connect you to our patient support team for help with your medication refill."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to transfer you?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that would be great, thank you."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you, I'll hold."
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now. Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello."
+    },
+    {
+      "speaker": "agent",
+      "text": "you've reached the pretty good AI test line."
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks, goodbye."
+    },
+    {
+      "speaker": "agent",
+      "text": "Goodbye."
+    }
+  ]
+}

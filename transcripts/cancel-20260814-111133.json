@@ -1,0 +1,221 @@
+{
+  "scenario": "cancel",
+  "category": "normal",
+  "call_sid": "CA35d1fa8343b811a269372565d004bf68",
+  "started_at": "2026-08-14T11:11:33.000813",
+  "what_to_check": "Does the agent handle a cancellation cleanly and set rebooking expectations?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Hi, um, I understand."
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I actually need some help in English right now."
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "part of pretty good AI."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I need to cancel my upcoming appointment. I'll be traveling."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yeah, that\u2019s"
+    },
+    {
+      "speaker": "agent",
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "speaker": "patient",
+      "text": "No, this is Elena Torres."
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Priya?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's November 2nd, 1978."
+    },
+    {
+      "speaker": "agent",
+      "text": "please provide your date of birth."
+    },
+    {
+      "speaker": "agent",
+      "text": "just to confirm."
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that's"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that's correct."
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your name as Aleida Torres and your date of birth as November 2, 1978."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure. It\u2019s E-L-E-N-A, and T-O-R-R-E-S."
+    },
+    {
+      "speaker": "agent",
+      "text": "If so, could you please spell your first and last name for me?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like to use your phone number to look up your record?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If so,"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, my number"
+    },
+    {
+      "speaker": "agent",
+      "text": "please provide the number you have on file with us."
+    },
+    {
+      "speaker": "agent",
+      "text": "if you're not sure."
+    },
+    {
+      "speaker": "patient",
+      "text": "I\u2019m"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can confirm your name and date of birth again."
+    },
+    {
+      "speaker": "patient",
+      "text": "Let's go with my name and date of birth to find the record."
+    },
+    {
+      "speaker": "agent",
+      "text": "Which would you prefer?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's"
+    },
+    {
+      "speaker": "agent",
+      "text": "Please spell your first and last name for me one more time."
+    },
+    {
+      "speaker": "agent",
+      "text": "confirm your date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "E-L-E-N-A, T-O-R-R-E-S, and my date of birth is November 2nd, 1978."
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your phone number, it's 848-308-..."
+    },
+    {
+      "speaker": "agent",
+      "text": "7 6 8 7"
+    },
+    {
+      "speaker": "agent",
+      "text": "and your date of birth is November 2, 1978."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that's correct."
+    },
+    {
+      "speaker": "agent",
+      "text": "Also, could you please confirm the spelling of your first name?"
+    },
+    {
+      "speaker": "patient",
+      "text": "It\u2019s actually"
+    },
+    {
+      "speaker": "agent",
+      "text": "I heard D-L-E-N-A."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that right or should it be E-L-E-N?"
+    },
+    {
+      "speaker": "patient",
+      "text": "It's E-L-E-N-A."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm unable to find your record in our system right now."
+    },
+    {
+      "speaker": "patient",
+      "text": "That sounds good."
+    },
+    {
+      "speaker": "agent",
+      "text": "I can connect you to our patient support team for help with canceling your appointment."
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, please transfer me. Also, can you let me know what I need to do to rebook later?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to transfer you?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you, I appreciate it."
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now. Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello, you've reached the pretty good AI test line, goodbye."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, all right, thank you. Goodbye."
+    }
+  ]
+}

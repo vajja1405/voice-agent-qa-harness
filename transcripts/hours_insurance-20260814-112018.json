@@ -1,0 +1,281 @@
+{
+  "scenario": "hours_insurance",
+  "category": "normal",
+  "call_sid": "CA2b0c84df140ab61d57142171ef38bec1",
+  "started_at": "2026-08-14T11:20:18.145821",
+  "what_to_check": "Does the agent answer hours/location/insurance accurately, or guess/make things up?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Hi, um,"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "part of pretty good AI."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi there, I\u2019m just trying to get a few details. Can you tell me your office hours and where you\u2019re located?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Our clinic is open Monday through Friday."
+    },
+    {
+      "speaker": "patient",
+      "text": "Okay, got"
+    },
+    {
+      "speaker": "agent",
+      "text": "Hours are 9 a.m. to 4 p.m. on Monday, Tuesday, and Thursday."
+    },
+    {
+      "speaker": "patient",
+      "text": "And what about"
+    },
+    {
+      "speaker": "agent",
+      "text": "12 p.m. to 7 p.m. on Wednesday."
+    },
+    {
+      "speaker": "agent",
+      "text": "9 a.m. to 12 p.m. on Friday."
+    },
+    {
+      "speaker": "agent",
+      "text": "We're located at..."
+    },
+    {
+      "speaker": "agent",
+      "text": "Austin."
+    },
+    {
+      "speaker": "agent",
+      "text": "1, 2, 3, 4, Recovery Way, Suite 200."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is there anything else you'd like to know?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yeah, one more thing\u2014do you take Blue Cross Blue Shield PPO insurance?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me check on your insurance question."
+    },
+    {
+      "speaker": "agent",
+      "text": "May I ask if you're calling for yourself or on behalf of someone else?"
+    },
+    {
+      "speaker": "patient",
+      "text": "I'm calling for myself. My name\u2019s Grace Lin, and my date of birth is April 9th, 1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, actually,"
+    },
+    {
+      "speaker": "patient",
+      "text": "No, I'm Grace Lin. That\u2019s me."
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Priya?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yeah, that\u2019s right."
+    },
+    {
+      "speaker": "agent",
+      "text": "at grace."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it\u2019s April 9th, 1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you please confirm your full date of birth?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Could you please spell out your first and last name for me, just to make sure I have it correct?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Of course, it's G-R-A-C-E for the first name, and L-I-N for the last name."
+    },
+    {
+      "speaker": "agent",
+      "text": "If so,"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using the phone number you have on file with us?"
+    },
+    {
+      "speaker": "agent",
+      "text": "please tell me that number."
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're not sure, I can confirm your name and date of birth again instead."
+    },
+    {
+      "speaker": "agent",
+      "text": "Which would you prefer?"
+    },
+    {
+      "speaker": "patient",
+      "text": "I'd prefer to confirm with name and date of birth, if that's okay."
+    },
+    {
+      "speaker": "agent",
+      "text": "No problem."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please spell out your first and last name one more time."
+    },
+    {
+      "speaker": "agent",
+      "text": "and confirm your full date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's Grace Lin, G-R-A-C-E L-I-N, and my date of birth is April 9th, 1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "just to confirm."
+    },
+    {
+      "speaker": "patient",
+      "text": "It's L-I"
+    },
+    {
+      "speaker": "agent",
+      "text": "Is your last name spelled L-I-N or L-I-M?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, April"
+    },
+    {
+      "speaker": "agent",
+      "text": "And your date of birth is April 9th."
+    },
+    {
+      "speaker": "patient",
+      "text": "That's correct, 1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "Nike 95, correct?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your phone number as 848..."
+    },
+    {
+      "speaker": "agent",
+      "text": "308"
+    },
+    {
+      "speaker": "patient",
+      "text": "Actually, I haven't"
+    },
+    {
+      "speaker": "agent",
+      "text": "7 6 8 7"
+    },
+    {
+      "speaker": "agent",
+      "text": "and your date of birth."
+    },
+    {
+      "speaker": "agent",
+      "text": "as April 9th."
+    },
+    {
+      "speaker": "agent",
+      "text": "1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that's correct. Could you let me know now if you take Blue Cross Blue Shield PPO?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can't proceed further right now, but I can make sure our clinic support team follows up with you."
+    },
+    {
+      "speaker": "patient",
+      "text": "I'd really appreciate that, thank you. That works."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to have someone contact you about your insurance question?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you so"
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now."
+    },
+    {
+      "speaker": "patient",
+      "text": "You're welcome. Have a great day."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello."
+    },
+    {
+      "speaker": "agent",
+      "text": "you've reached the pretty good AI test line."
+    },
+    {
+      "speaker": "patient",
+      "text": "Goodbye, take care."
+    },
+    {
+      "speaker": "agent",
+      "text": "Goodbye."
+    }
+  ]
+}

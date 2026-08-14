@@ -1,0 +1,64 @@
+Scenario   : memory_consistency (memory)
+Call SID   : CA33a6d98a7eb2857c27bdb474ab5e8dc3
+Started    : 2026-08-14T11:03:39.812804
+Testing    : MEMORY: does the agent RETAIN and use earlier context within the same call (afternoon-only, new insurance), or forget/contradict itself?
+------------------------------------------------------------
+PATIENT (bot): Oh, sure,
+AGENT (Maggie): This call may be recorded for quality and training purposes.
+PATIENT (bot): Hey, um, so my insurance just changed to
+AGENT (Maggie): Para Español, oprima el 2.
+AGENT (Maggie): Thanks for calling Fiva Point Orthopedics.
+AGENT (Maggie): Part of pretty good
+AGENT (Maggie): A.I.
+AGENT (Maggie): How may I help you today?
+PATIENT (bot): Hi, yeah, I’m looking to book a new appointment. Just so you know, my insurance just changed to Aetna, and mornings never work for me, only afternoons.
+PATIENT (bot): Sure, it’s David
+AGENT (Maggie): Can I get your full name and date of birth?
+PATIENT (bot): Okafor, and my date of birth is August 30th, 1975.
+AGENT (Maggie): I'll look up your chart before we continue.
+AGENT (Maggie): Thanks
+AGENT (Maggie): Can you please provide your first name as well?
+PATIENT (bot): Of course, my first name is David.
+PATIENT (bot): Yeah, that's
+AGENT (Maggie): just to confirm.
+PATIENT (bot): That's right,
+AGENT (Maggie): I have your name as David Okafor.
+AGENT (Maggie): and your date of birth is August 30th, 1975.
+AGENT (Maggie): Is that correct?
+AGENT (Maggie): If so, we can move forward.
+AGENT (Maggie): If not, please spell out your first and last name.
+PATIENT (bot): That's correct, everything's right.
+AGENT (Maggie): Thanks for confirming
+PATIENT (bot): No problem, thank you.
+AGENT (Maggie): One moment while I pull up your chart.
+AGENT (Maggie): You're welcome.
+PATIENT (bot): Great, afternoons are what I need.
+AGENT (Maggie): Let me check for available afternoon appointments for you.
+AGENT (Maggie): Understood.
+PATIENT (bot): Thanks, and
+AGENT (Maggie): I'll look for afternoon openings and share the next available option with you.
+AGENT (Maggie): One moment.
+PATIENT (bot): Sure, take your time.
+AGENT (Maggie): Thanks for your patience
+AGENT (Maggie): I'll have those afternoon options for you shortly.
+PATIENT (bot): Thanks. And just to confirm, you’ve got my new insurance on file, right?
+AGENT (Maggie): I'll check on your insurance details as soon as I access your chart.
+AGENT (Maggie): To help me find your record, would you like to use the phone number you have on file with us?
+AGENT (Maggie): If so,
+AGENT (Maggie): please provide that number.
+PATIENT (bot): I’d prefer
+AGENT (Maggie): If you're not sure, I can confirm your name and date of birth again.
+AGENT (Maggie): Which would you prefer?
+PATIENT (bot): Let’s confirm with my name and date of birth again: David Okafor, August 30th, 1975.
+AGENT (Maggie): I'm unable to access your chart right now.
+AGENT (Maggie): So I can't.
+PATIENT (bot): Oh, I
+AGENT (Maggie): confirm your insurance or book your appointment.
+AGENT (Maggie): I'll connect you to our patient support team for help.
+AGENT (Maggie): Please stay on the line.
+PATIENT (bot): Alright, I’ll hold.
+PATIENT (bot): Thank you, I appreciate it.
+AGENT (Maggie): Transferring you now, thank you.
+AGENT (Maggie): Hello.
+PATIENT (bot): Goodbye. Thank you.
+AGENT (Maggie): You've reached the Pretty Good AI test line. Goodbye.

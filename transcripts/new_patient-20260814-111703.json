@@ -1,0 +1,189 @@
+{
+  "scenario": "new_patient",
+  "category": "compliance",
+  "call_sid": "CA76b1be3a068e3154092c29bf9ecfd3cd",
+  "started_at": "2026-08-14T11:17:03.437665",
+  "what_to_check": "REVENUE: does the agent successfully convert and book a NEW patient (their highest-value workflow), capturing the needed info?",
+  "turns": [
+    {
+      "speaker": "patient",
+      "text": "Oh, okay,"
+    },
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, um, I speak English."
+    },
+    {
+      "speaker": "agent",
+      "text": "Para Espa\u00f1ol, oprima el 2."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for calling Pivot Point Orthopaedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "part of pretty good AI."
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I'd like to become a new patient and book my first appointment, please."
+    },
+    {
+      "speaker": "agent",
+      "text": "How may I help you today?"
+    },
+    {
+      "speaker": "agent",
+      "text": "We're happy to welcome new patients at Pivot Point Orthopedics."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll help you get started with your first appointment."
+    },
+    {
+      "speaker": "patient",
+      "text": "This is for me, I'm booking for myself."
+    },
+    {
+      "speaker": "agent",
+      "text": "May I ask, are you booking this appointment for yourself or for someone else?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're calling from the number we have on file."
+    },
+    {
+      "speaker": "patient",
+      "text": "Actually, my name is Brandon Hale."
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Priya?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for letting me know!"
+    },
+    {
+      "speaker": "agent",
+      "text": "Please provide your full date of birth."
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure, it's January 27th, 2000."
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm."
+    },
+    {
+      "speaker": "agent",
+      "text": "Could you please spell your first and last name for me?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Of course. It's B-R-A-N-D-O-N, and the last name H-A-L-E."
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us."
+    },
+    {
+      "speaker": "agent",
+      "text": "If you're not sure, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "text": "I'm actually a brand-new patient, so I don't have a number on file yet."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks for clarifying."
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to be sure, can you confirm your first and last name and your date of birth one more time?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Sure. It's Brandon Hale, B-R-A-N-D-O-N H-A-L-E, and my date of birth is January 27th, 2000."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please fill them out for me."
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your name as Brandon Hale."
+    },
+    {
+      "speaker": "agent",
+      "text": "Date of birth, January 27, 2000."
+    },
+    {
+      "speaker": "agent",
+      "text": "and your phone number as 848-"
+    },
+    {
+      "speaker": "agent",
+      "text": "308"
+    },
+    {
+      "speaker": "agent",
+      "text": "7 6 8"
+    },
+    {
+      "speaker": "agent",
+      "text": "Seven."
+    },
+    {
+      "speaker": "patient",
+      "text": "Actually, I haven't given my phone number yet."
+    },
+    {
+      "speaker": "agent",
+      "text": "Is all of that correct?"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, the name and date of birth are correct. I can give you my phone number now if you'd like."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you, Brandon."
+    },
+    {
+      "speaker": "agent",
+      "text": "Since you're a brand new patient, I'll need to connect you with our patient support team to complete your registration."
+    },
+    {
+      "speaker": "agent",
+      "text": "and book your first appointment."
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now. Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Please stay on the line while I transfer you."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hello, you've reached the pretty good AI test line."
+    },
+    {
+      "speaker": "agent",
+      "text": "Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "text": "Oh, all right. Thank you. Take care."
+    }
+  ]
+}
