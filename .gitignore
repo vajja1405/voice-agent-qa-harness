@@ -12,3 +12,6 @@ venv/
 
 # NOTE: we intentionally DO commit recordings/ and transcripts/
 # because the challenge requires them as deliverables.
+
+# Local prep notes (not part of the submission)
+LOOM_SCRIPTS.md
