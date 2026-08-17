@@ -296,29 +296,42 @@ async def media(twilio_ws: WebSocket):
                         last_assistant_item = None
 
                     elif etype == "input_audio_buffer.speech_started":
-                        # Barge-in: the caller talked over our patient. Two things are wrong,
-                        # and flushing the audio only fixes the first:
-                        #   1) Twilio still has our patient's queued audio -> clear it.
-                        #   2) The MODEL still believes it spoke the whole reply, but the
-                        #      caller only heard up to `elapsed_ms`. If we don't tell it,
-                        #      its memory desyncs from what was heard and later turns drift.
-                        if last_assistant_item and response_start_timestamp is not None:
-                            elapsed_ms = max(0, latest_media_timestamp - response_start_timestamp)
-                            print(f"[bridge] barge-in: caller cut in at {elapsed_ms}ms -> "
-                                  f"truncating the model's memory of its reply to match")
+                        # The caller barged in. TWO things must happen, in this order:
+                        #
+                        #   1) Tell OpenAI HOW MUCH of the in-flight reply the caller
+                        #      actually heard, so the model trims its own memory to match.
+                        #      Skip this and the model believes it spoke the whole reply,
+                        #      then later turns reference words the caller never got.
+                        #   2) Tell Twilio to DROP the patient audio it has buffered but
+                        #      not yet played, so the caller stops hearing us immediately.
+                        #
+                        # We must compute the truncate point BEFORE re-arming the timers
+                        # below, because it's derived from them.
+                        if last_assistant_item is not None and response_start_timestamp is not None:
+                            # ms of THIS reply that reached the caller = now - when it began.
+                            # (latest_media_timestamp is Twilio's real-time call clock, so
+                            # this is exactly what was played -- never more than was generated.)
+                            audio_end_ms = latest_media_timestamp - response_start_timestamp
+                            if audio_end_ms < 0:
+                                audio_end_ms = 0
                             await openai_ws.send(json.dumps({
                                 "type": "conversation.item.truncate",
                                 "item_id": last_assistant_item,
-                                "content_index": 0,
-                                "audio_end_ms": elapsed_ms,
+                                "content_index": 0,       # the audio content part
+                                "audio_end_ms": audio_end_ms,
                             }))
-                            last_assistant_item = None
-                            response_start_timestamp = None
+
                         if stream_sid:
                             await twilio_ws.send_text(json.dumps({
                                 "event": "clear",
                                 "streamSid": stream_sid,
                             }))
+
+                        # This reply is done. Re-arm the timers so the next reply measures
+                        # from its own first chunk, and clear the item so a second
+                        # speech_started can't truncate it twice.
+                        response_start_timestamp = None
+                        last_assistant_item = None
 
                     elif etype == "error":
                         print("[openai][error]", json.dumps(evt))
