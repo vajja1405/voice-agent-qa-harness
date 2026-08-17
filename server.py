@@ -190,6 +190,14 @@ async def media(twilio_ws: WebSocket):
     transcript = []                   # [(speaker, text), ...]
     scenario_name = twilio_ws.query_params.get("scenario", "schedule_basic")  # fallback only
 
+    # ---- Interruption (barge-in) state -----------------------------------------
+    # A correct barge-in isn't just "stop the audio." We also have to tell the
+    # model HOW MUCH of its reply the caller actually heard before cutting in,
+    # or the model's memory desyncs from reality. These three track that.
+    latest_media_timestamp = 0        # ms, advanced by Twilio's media events (the call clock)
+    last_assistant_item = None        # id of the patient's in-flight audio response
+    response_start_timestamp = None   # call-clock ms when that reply began playing
+
     # ---- Wait for Twilio's 'start' event to learn WHICH scenario this call is. ----
     # The scenario arrives as a <Parameter> (see /twiml) in start.customParameters.
     try:
@@ -221,12 +229,15 @@ async def media(twilio_ws: WebSocket):
 
             # ---- Job A: clinic agent's audio (from Twilio) -> OpenAI --------------
             async def twilio_to_openai():
+                nonlocal latest_media_timestamp
                 try:
                     async for message in twilio_ws.iter_text():
                         data = json.loads(message)
                         event = data.get("event")
 
                         if event == "media":
+                            # Advance the call clock so we can measure interruptions precisely.
+                            latest_media_timestamp = int(data["media"].get("timestamp") or latest_media_timestamp)
                             # Maggie's voice, base64 g711_ulaw -> hand it to OpenAI's ears
                             await openai_ws.send(json.dumps({
                                 "type": "input_audio_buffer.append",
@@ -241,7 +252,7 @@ async def media(twilio_ws: WebSocket):
 
             # ---- Job B: our patient's audio (from OpenAI) -> Twilio ---------------
             async def openai_to_twilio():
-                nonlocal stream_sid
+                nonlocal stream_sid, last_assistant_item, response_start_timestamp
                 async for raw in openai_ws:
                     evt = json.loads(raw)
                     etype = evt.get("type")
@@ -250,6 +261,13 @@ async def media(twilio_ws: WebSocket):
                     if etype in ("response.output_audio.delta", "response.audio.delta") and stream_sid:
                         delta = evt.get("delta")
                         if delta:
+                            # First chunk of a reply: stamp when it started (call-clock ms)
+                            # and remember which item it is. Both are needed to truncate
+                            # correctly if the caller interrupts mid-sentence.
+                            if response_start_timestamp is None:
+                                response_start_timestamp = latest_media_timestamp
+                            if evt.get("item_id"):
+                                last_assistant_item = evt["item_id"]
                             # Our patient's spoken audio chunk -> play it onto the call
                             await twilio_ws.send_text(json.dumps({
                                 "event": "media",
@@ -270,9 +288,32 @@ async def media(twilio_ws: WebSocket):
                             print(f"  PATIENT : {text}")
                             transcript.append(("patient", text))
 
+                    elif etype == "response.done":
+                        # Reply finished cleanly -> re-arm the timers so the NEXT reply
+                        # measures interruptions from its own start, not this one's.
+                        # (The reference sample skips this and mis-times later replies.)
+                        response_start_timestamp = None
+                        last_assistant_item = None
+
                     elif etype == "input_audio_buffer.speech_started":
-                        # Barge-in: the agent started talking again. Stop any of our
-                        # patient's audio that Twilio still has queued, so we don't talk over her.
+                        # Barge-in: the caller talked over our patient. Two things are wrong,
+                        # and flushing the audio only fixes the first:
+                        #   1) Twilio still has our patient's queued audio -> clear it.
+                        #   2) The MODEL still believes it spoke the whole reply, but the
+                        #      caller only heard up to `elapsed_ms`. If we don't tell it,
+                        #      its memory desyncs from what was heard and later turns drift.
+                        if last_assistant_item and response_start_timestamp is not None:
+                            elapsed_ms = max(0, latest_media_timestamp - response_start_timestamp)
+                            print(f"[bridge] barge-in: caller cut in at {elapsed_ms}ms -> "
+                                  f"truncating the model's memory of its reply to match")
+                            await openai_ws.send(json.dumps({
+                                "type": "conversation.item.truncate",
+                                "item_id": last_assistant_item,
+                                "content_index": 0,
+                                "audio_end_ms": elapsed_ms,
+                            }))
+                            last_assistant_item = None
+                            response_start_timestamp = None
                         if stream_sid:
                             await twilio_ws.send_text(json.dumps({
                                 "event": "clear",
