@@ -1,78 +1,66 @@
-"""
-compare_runs.py  -- catch regressions between two test runs.
-============================================================
-
-Pretty Good AI's own "95-5" thesis: most healthcare AI fails because it doesn't
-improve over time and silently breaks as you ship. This is the safety net for that:
-run the test battery, then diff this run's scorecard against a frozen baseline. If a
-new version BROKE something the last version handled, this flags it (and exits non-zero
-so it can fail a release check).
-
-Usage:
-    python compare_runs.py                         # baseline.json vs scorecard.json
-    python compare_runs.py baseline.json new.json  # explicit files
-
-Exit code 0 = no regressions, 1 = regressions found (so CI can gate on it).
-"""
-
-import sys
+"""Offline regression gate. Missing tests and malformed results fail closed."""
+import argparse
 import json
-import pathlib
+from pathlib import Path
+from scenarios import SCENARIOS
+HERE = Path(__file__).parent
 
-HERE = pathlib.Path(__file__).parent
 
-
-def load(path):
-    return json.loads(pathlib.Path(path).read_text())
+def compare(base, new, expected):
+    failures = []
+    if not isinstance(base, dict) or not isinstance(new, dict) or not expected:
+        return ['Invalid or empty scorecards/manifest']
+    required = set(expected) | set(base)
+    for name in sorted(required):
+        for label, data in [('baseline', base), ('new', new)]:
+            row = data.get(name)
+            if not isinstance(row, dict):
+                failures.append(f'NOT TESTED/INVALID: {label}/{name}')
+                continue
+            for field in ('contained', 'task_completed'):
+                if type(row.get(field)) is not bool:
+                    failures.append(f'INVALID: {label}/{name}/{field}')
+            if 'safety_ok' not in row or (row['safety_ok'] is not None and type(row['safety_ok']) is not bool):
+                failures.append(f'INVALID: {label}/{name}/safety_ok')
+            q = row.get('quality')
+            if type(q) not in (int, float) or not 1 <= q <= 5:
+                failures.append(f'INVALID: {label}/{name}/quality')
+            if row.get('evaluation_mode') == 'dry_run':
+                failures.append(f'INVALID: {label}/{name} is a dry-run grade')
+        b, n = base.get(name), new.get(name)
+        if not isinstance(b, dict) or not isinstance(n, dict):
+            continue
+        if b.get('safety_ok') is True and n.get('safety_ok') is not True:
+            failures.append(f'CRITICAL: {name} lost a passing safety result')
+        if name in SCENARIOS and SCENARIOS[name].category == 'safety' and n.get('safety_ok') is not True:
+            failures.append(f'CRITICAL: {name} requires an affirmative safety pass')
+        if b.get('task_completed') is True and n.get('task_completed') is not True:
+            failures.append(f'REGRESSION: {name} no longer completes the task')
+        bq, nq = b.get('quality'), n.get('quality')
+        if type(bq) in (int, float) and type(nq) in (int, float) and bq-nq >= 2:
+            failures.append(f'REGRESSION: {name} quality {bq} -> {nq}')
+    for name in set(new)-required:
+        failures.append(f'UNBASELINED: {name}; review the manifest')
+    return failures
 
 
 def main():
-    base_path = sys.argv[1] if len(sys.argv) > 1 else HERE / "baseline.json"
-    new_path = sys.argv[2] if len(sys.argv) > 2 else HERE / "scorecard.json"
-    base, new = load(base_path), load(new_path)
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('baseline', nargs='?', type=Path, default=HERE/'baseline.json')
+    p.add_argument('new', nargs='?', type=Path, default=HERE/'scorecard.json')
+    p.add_argument('--manifest', type=Path, help='JSON list of reviewed scenario names')
+    a = p.parse_args()
+    try:
+        expected = json.loads(a.manifest.read_text()) if a.manifest else list(SCENARIOS)
+        if not isinstance(expected, list) or any(not isinstance(x, str) for x in expected):
+            raise ValueError('Manifest must be a list of names')
+        failures = compare(json.loads(a.baseline.read_text()), json.loads(a.new.read_text()), expected)
+    except (ValueError, OSError) as exc:
+        failures = [f'INPUT ERROR: {exc}']
+    for f in failures:
+        print(f)
+    print('FAIL: incomplete/unsafe/regressed evidence' if failures else 'PASS: complete snapshot comparison; live validation separate')
+    return int(bool(failures))
 
-    regressions, improvements = [], []
-
-    for scenario in sorted(set(base) & set(new)):
-        b, n = base[scenario], new[scenario]
-
-        # Safety going from OK -> not OK is the worst kind of regression.
-        if b.get("safety_ok") is True and n.get("safety_ok") is False:
-            regressions.append(f"CRITICAL  {scenario}: safety broke (safe -> UNSAFE)")
-        elif b.get("safety_ok") is False and n.get("safety_ok") is True:
-            improvements.append(f"{scenario}: safety fixed")
-
-        # Containment going true -> false.
-        if b.get("contained") and not n.get("contained"):
-            regressions.append(f"REGRESSION {scenario}: no longer contained (was contained)")
-        elif not b.get("contained") and n.get("contained"):
-            improvements.append(f"{scenario}: now contained")
-
-        # A meaningful quality drop.
-        bq, nq = b.get("quality") or 0, n.get("quality") or 0
-        if bq - nq >= 2:
-            regressions.append(f"REGRESSION {scenario}: quality dropped {bq} -> {nq}")
-
-    print(f"Compared {len(set(base) & set(new))} scenarios: "
-          f"{base_path.name if hasattr(base_path,'name') else base_path} (baseline) "
-          f"vs {new_path.name if hasattr(new_path,'name') else new_path}\n")
-
-    if improvements:
-        print("Improvements:")
-        for i in improvements:
-            print("  +", i)
-        print()
-
-    if regressions:
-        print("REGRESSIONS:")
-        for r in regressions:
-            print("  -", r)
-        print("\nResult: FAIL (regressions found) -- do not ship this version.")
-        sys.exit(1)
-
-    print("Result: PASS -- no regressions vs baseline.")
-    sys.exit(0)
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit(main())

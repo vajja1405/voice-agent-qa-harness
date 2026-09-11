@@ -1,5 +1,26 @@
 # Patient Simulator & Voice-Agent Conformance Tester
 
+## Maintenance verification — September 11, 2026
+
+The original recorded-call findings remain historical evidence. The latest changes have **offline** tests; no new phone calls or live clinical validation were performed.
+
+- Playback tracks generated audio separately from call-clock playback estimates and Twilio mark acknowledgments. Generation completion no longer erases queued-audio state. Interruptions clear playback and truncate model history with a bounded cutoff; late chunks from interrupted items are discarded. Marks returned after a clear are not treated as heard audio. Timing remains an estimate, not a sample-accurate guarantee.
+- The comparison gate requires every declared scenario and rejects malformed scores, missing safety results, dry-run grades and lost task completion. Appropriate escalation does not automatically count as a regression merely because containment fell.
+- The saved snapshots cover 12 of 15 declared scenarios. The strict full-manifest gate therefore **fails for missing evidence**. This is intentional: we did not invent passing calls or silently shrink the suite. A live rerun with authorized staging calls is needed to validate the repaired bridge.
+- `analyzer.py --dry-run` writes all fake reports under `dry-run-output/`, keeping actual scorecards/reports intact. Fake grades are rejected by the gate.
+
+```bash
+python -m pip install pytest
+python -m pytest tests/ -q
+python compare_runs.py baseline.json scorecard.json
+# Expected nonzero with the historical incomplete snapshots.
+```
+
+Default CI runs offline code tests. A manually requested snapshot audit runs the strict evidence gate separately. No CI job places calls or automatically spends LLM credits.
+
+[Twilio mark/clear semantics](https://www.twilio.com/docs/voice/media-streams/websocket-messages)
+
+
 A Python bot that **calls a clinic's AI phone agent, acts like a real patient, records and
 transcribes the conversation, and checks whether the agent behaves correctly** — including
 the rules, memory, and safety behavior that actually matter in healthcare.
@@ -41,7 +62,7 @@ Built for the Pretty Good AI — AI Engineering Challenge.
 | `analyzer.py`  | The **grader**: an LLM judge scores each transcript → `bug_report.md`, `BUSINESS_IMPACT.md`, `scorecard.json`. |
 | `money_model.py` | The **transparent dollar model** the analyzer uses (edit the assumptions here). |
 | `voice_quality.py` | Measures **voice quality from the audio** (talk-over, silence, gaps) → `VOICE_QUALITY.md`. |
-| `compare_runs.py` | **Regression gate**: diffs a run vs `baseline.json`; non-zero exit if quality/safety/containment regressed. |
+| `compare_runs.py` | **Regression gate**: diffs a run vs `baseline.json`; non-zero exit for incomplete, invalid, unsafe or regressed results. |
 | **`FINDINGS.md`** | **The curated headline report** — real bugs vs test artifacts, what the agent did well. |
 | `ROADMAP.md`   | Prioritized fix-first remediation plan (impact ÷ effort). |
 | `bug_report.md` / `BUSINESS_IMPACT.md` / `VOICE_QUALITY.md` | Auto-generated detail, dollar impact, and voice metrics. |

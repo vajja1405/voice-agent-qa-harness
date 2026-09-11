@@ -16,3 +16,6 @@ venv/
 # Local prep notes (not part of the submission)
 LOOM_SCRIPTS.md
 DEEP_PREP.md
+
+# Deterministic fake grades never replace real snapshots.
+dry-run-output/

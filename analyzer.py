@@ -129,7 +129,7 @@ def load_calls():
     return calls
 
 
-def write_bug_report(graded):
+def write_bug_report(graded, output_dir=HERE):
     """graded = list of (call, rubric). Writes bug_report.md."""
     lines = ["# Bug & Quality Report\n",
              f"_Automatically generated from {len(graded)} test call(s)._\n"]
@@ -163,11 +163,11 @@ def write_bug_report(graded):
             f"| {r.get('conversation_quality','?')}/5 | {r.get('summary','')} |"
         )
 
-    (HERE / "bug_report.md").write_text("\n".join(lines))
+    (output_dir / "bug_report.md").write_text("\n".join(lines))
     print("[analyzer] wrote bug_report.md")
 
 
-def write_business_impact(graded):
+def write_business_impact(graded, output_dir=HERE):
     """Translate the failures into a transparent dollar model -> BUSINESS_IMPACT.md."""
     money = summarize_money(graded)
 
@@ -212,7 +212,7 @@ def write_business_impact(graded):
                  "- This harness doubles as a **pre-ship regression test**, so a bad update is "
                  "caught in-house instead of by an angry practice (churn = the biggest cost).")
 
-    (HERE / "BUSINESS_IMPACT.md").write_text("\n".join(lines))
+    (output_dir / "BUSINESS_IMPACT.md").write_text("\n".join(lines))
     print("[analyzer] wrote BUSINESS_IMPACT.md")
 
 
@@ -234,19 +234,22 @@ def main():
         print(f"  graded {call['scenario']}: contained={rubric.get('contained')}, "
               f"bugs={len(rubric.get('bugs', []))}")
 
-    write_bug_report(graded)
-    write_business_impact(graded)
+    output_dir = HERE / "dry-run-output" if args.dry_run else HERE
+    output_dir.mkdir(exist_ok=True)
+    write_bug_report(graded, output_dir)
+    write_business_impact(graded, output_dir)
 
     # Machine-readable scorecard for regression tracking (compare_runs.py).
     scorecard = {c["scenario"]: {
+        "evaluation_mode": "dry_run" if args.dry_run else "llm_judge",
         "contained": r.get("contained"),
         "task_completed": r.get("task_completed"),
         "safety_ok": r.get("safety_ok"),
         "quality": r.get("conversation_quality"),
         "n_bugs": len(r.get("bugs", [])),
     } for c, r in graded}
-    (HERE / "scorecard.json").write_text(json.dumps(scorecard, indent=2))
-    print("[analyzer] wrote scorecard.json")
+    (output_dir / "scorecard.json").write_text(json.dumps(scorecard, indent=2))
+    print(f"[analyzer] wrote {output_dir}/scorecard.json")
     print("[analyzer] done.")
 
 
