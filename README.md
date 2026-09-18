@@ -1,5 +1,28 @@
 # Patient Simulator & Voice-Agent Conformance Tester
 
+A Python testing harness that calls a healthcare AI phone agent as a synthetic
+patient, captures the conversation, and evaluates behavior across repeatable scenarios.
+Built for the Pretty Good AI — AI Engineering Challenge.
+
+The business goal is to make conversational failures easier to reproduce and
+prioritize before an agent change reaches callers. This repository contains the
+testing system and findings; it does not implement the clinic's underlying agent
+or demonstrate a production improvement in patient outcomes or operating cost.
+
+**Workflow:** scenario → simulated patient call → transcript and recording →
+evaluation → findings and comparison against a baseline.
+
+## Review the project in two minutes
+
+1. [Findings](FINDINGS.md): observed behavior, supporting examples, and test-setup limitations.
+2. [Architecture](docs/ARCHITECTURE.md): how Twilio, the Python bridge, and OpenAI Realtime connect.
+3. [Scenario matrix](scenarios.py) and [comparison gate](compare_runs.py): what is tested and how incomplete or regressed results are rejected.
+
+**Evidence available:** the saved evaluation snapshots cover 12 of 15 declared
+scenarios. The full-suite evidence check currently fails because three scenarios
+are missing. Later bridge changes have offline tests and still require a new,
+authorized live evaluation. Reading the findings and code requires no API accounts.
+
 ## Maintenance verification — September 11, 2026
 
 The original recorded-call findings remain historical evidence. The latest changes have **offline** tests; no new phone calls or live clinical validation were performed.
@@ -20,12 +43,6 @@ Default CI runs offline code tests. A manually requested snapshot audit runs the
 
 [Twilio mark/clear semantics](https://www.twilio.com/docs/voice/media-streams/websocket-messages)
 
-
-A Python bot that **calls a clinic's AI phone agent, acts like a real patient, records and
-transcribes the conversation, and checks whether the agent behaves correctly** — including
-the rules, memory, and safety behavior that actually matter in healthcare.
-
-Built for the Pretty Good AI — AI Engineering Challenge.
 
 ---
 
@@ -136,7 +153,8 @@ python analyzer.py           # (--dry-run to preview format with no API spend)
 python voice_quality.py
 
 # 4. Regression gate: did this run break anything vs the frozen baseline?
-python compare_runs.py       # exit 0 = clean, 1 = regressions
+python compare_runs.py       # nonzero for incomplete, invalid, unsafe or regressed evidence
+# The committed 12-of-15 snapshots are incomplete, so this check is expected to fail.
 ```
 
 The curated, human-facing results live in **`FINDINGS.md`** (headline bugs) and
@@ -146,10 +164,11 @@ The curated, human-facing results live in **`FINDINGS.md`** (headline bugs) and
 
 ## Build status
 
-- [x] **M1** — Core: make a real call and hold a natural conversation. *(code done; verify with your first live call)*
+- [x] **M1** — Call bridge implemented; historical call artifacts are included. Later bridge changes still need a live rerun.
 - [x] **M2** — Save each call's recording (MP3) + transcript to files.
 - [x] **M3** — Full scenario matrix (15 scenarios, 5 categories incl. safety/memory/rule probes).
 - [x] **M4** — Analyzer/grader → `bug_report.md` + `BUSINESS_IMPACT.md`.
-- [ ] **M5** — Run 10+ calls and iterate. *(needs your accounts)*
+- [x] **M5a** — Historical evaluation: 12 scenarios have saved results and reviewed findings.
+- [ ] **M5b** — Run all 15 scenarios against the current bridge with an authorized test line and review the new evidence.
 - [x] **M6** — Architecture writeup (`docs/ARCHITECTURE.md`) + this README.
 - [ ] **M7** — Loom videos + submit.
