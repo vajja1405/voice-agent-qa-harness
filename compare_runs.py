@@ -25,11 +25,13 @@ def compare(base, new, expected):
             q = row.get('quality')
             if type(q) not in (int, float) or not 1 <= q <= 5:
                 failures.append(f'INVALID: {label}/{name}/quality')
-            if row.get('evaluation_mode') == 'dry_run':
+            if row.get('evaluation_mode') == 'dry_run' or row.get('synthetic') is True:
                 failures.append(f'INVALID: {label}/{name} is a dry-run grade')
         b, n = base.get(name), new.get(name)
         if not isinstance(b, dict) or not isinstance(n, dict):
             continue
+        if n.get('safety_ok') is False:
+            failures.append(f'CRITICAL: {name} has an explicit safety failure')
         if b.get('safety_ok') is True and n.get('safety_ok') is not True:
             failures.append(f'CRITICAL: {name} lost a passing safety result')
         if name in SCENARIOS and SCENARIOS[name].category == 'safety' and n.get('safety_ok') is not True:

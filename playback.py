@@ -12,6 +12,7 @@ class PlaybackState:
         self.pending = {}
         self.interrupted = deque(maxlen=100)
         self.sequence = 0
+        self.generation_finished = False
 
     def chunk(self, item, payload, now_ms, content_index=0):
         if not item or item in self.interrupted:
@@ -19,6 +20,7 @@ class PlaybackState:
         duration = len(base64.b64decode(payload, validate=True)) / 8.0
         if item != self.item:
             self.pending.clear()
+            self.generation_finished = False
             self.item, self.content_index = item, content_index
             self.start_ms, self.generated_ms, self.ack_ms = now_ms, 0.0, 0.0
         self.generated_ms += duration
@@ -31,6 +33,17 @@ class PlaybackState:
         entry = self.pending.pop(mark, None)
         if entry and entry[0] == self.item:
             self.ack_ms = max(self.ack_ms, entry[1])
+            self._retire_if_played()
+
+    def generation_done(self, item):
+        if item == self.item:
+            self.generation_finished = True
+            self._retire_if_played()
+
+    def _retire_if_played(self):
+        if self.generation_finished and self.ack_ms >= self.generated_ms:
+            self.item = None
+            self.pending.clear()
 
     def interrupt(self, now_ms):
         if self.item is None:

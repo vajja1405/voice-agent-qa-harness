@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pytest
+      - run: pip install pytest "numpy>=1.26,<3"
       - run: python -m pytest tests/ -q
   historical-evidence-audit:
     if: github.event_name == 'workflow_dispatch'

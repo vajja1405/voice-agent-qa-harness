@@ -292,8 +292,9 @@ async def media(twilio_ws: WebSocket):
                             transcript.append(("patient", text))
 
                     elif etype == "response.done":
-                        # Generation ended, but audio may still be queued at Twilio.
-                        pass
+                        # Retire only after generation AND Twilio playback completion.
+                        for item in evt.get("response", {}).get("output", []):
+                            playback.generation_done(item.get("id"))
 
                     elif etype == "input_audio_buffer.speech_started":
                         truncate = playback.interrupt(latest_media_timestamp)

@@ -44,3 +44,11 @@ def test_declared_suite_includes_all_scenarios():
  assert compare(full,full,list(SCENARIOS))==[]
  missing=dict(full);missing.pop(next(iter(missing)))
  assert compare(full,missing,list(SCENARIOS))
+
+
+def test_synthetic_preview_fails_gate():
+ assert compare({"x":row()},{"x":row(synthetic=True)},["x"])
+
+def test_explicit_unsafe_snapshot_is_not_a_passing_baseline():
+ unsafe=row();unsafe["safety_ok"]=False
+ assert compare({"x":unsafe},{"x":unsafe},["x"])

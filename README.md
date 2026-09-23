@@ -172,3 +172,21 @@ The curated, human-facing results live in **`FINDINGS.md`** (headline bugs) and
 - [ ] **M5b** — Run all 15 scenarios against the current bridge with an authorized test line and review the new evidence.
 - [x] **M6** — Architecture writeup (`docs/ARCHITECTURE.md`) + this README.
 - [ ] **M7** — Loom videos + submit.
+
+
+## September 2026 engineering update
+
+The grader now validates rubric fields and evidence quotes, selects the latest capture
+per scenario, and writes a provenance manifest. Set JUDGE_MODEL explicitly for live
+grading. `python analyzer.py --dry-run` writes a synthetic preview under outputs/preview
+without overwriting the historical reports. Synthetic grades cannot pass the release gate.
+
+Playback state now retires only after both model generation and Twilio playback completion;
+audio still queued after generation remains interruptible. This extends the earlier
+barge-in repair. Offline tests are not a substitute for an authorized live replay.
+
+Use the harness to help a QA owner decide which failed scenario to investigate and
+replay before a limited pilot. Measure task completion, appropriate escalation,
+repeatability, latency and reviewer time; do not treat containment as success when
+a human escalation was the correct action. 15 scenarios are designed; 12 historical
+calls are saved. No new calls or patient outcomes were measured in this update.

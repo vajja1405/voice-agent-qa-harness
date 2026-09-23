@@ -17,3 +17,5 @@ python-dotenv==1.0.1
 
 # --- Used by the analyzer/grader (M4): Claude is the LLM "judge" that scores transcripts ---
 anthropic==0.42.0
+
+numpy>=1.26,<3

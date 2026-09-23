@@ -77,14 +77,15 @@ def analyze(wav_bytes):
     w = wave.open(io.BytesIO(wav_bytes))
     fr = w.getframerate()
     ch = w.getnchannels()
-    raw = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
-    if ch == 2:
-        raw = raw.reshape(-1, 2)
-        a, b = raw[:, 0], raw[:, 1]
-    else:
-        a, b = raw, np.zeros_like(raw)
+    if ch != 2 or w.getsampwidth() != 2 or w.getcomptype() != 'NONE':
+        raise ValueError('Voice metrics require uncompressed 16-bit dual-channel WAV audio')
+    raw = np.frombuffer(w.readframes(w.getnframes()), dtype='<i2').astype(np.float32)
+    raw = raw.reshape(-1, 2)
+    a, b = raw[:, 0], raw[:, 1]
 
     fs = int(fr * FRAME_MS / 1000)  # samples per frame
+    if fs < 1 or len(a) < fs:
+        return None
 
     def frame_rms(x):
         n = len(x) // fs
