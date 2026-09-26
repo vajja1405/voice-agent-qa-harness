@@ -19,3 +19,6 @@ python-dotenv==1.0.1
 anthropic==0.42.0
 
 numpy>=1.26,<3
+
+# --- Event pipeline: Kafka client (only needed for --bus kafka) ---
+confluent-kafka>=2.5

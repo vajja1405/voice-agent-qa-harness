@@ -23,6 +23,54 @@ scenarios. The full-suite evidence check currently fails because three scenarios
 are missing. Later bridge changes have offline tests and still require a new,
 authorized live evaluation. Reading the findings and code requires no API accounts.
 
+## Event-driven evaluation pipeline (September 26, 2026)
+
+Post-call evaluation now runs as independent consumers on a message bus instead of one sequential script.
+One `CallCompleted` event fans out to four stages, each its own consumer group that scales on its own:
+
+```
+call ends ─▶ calls.completed (4 partitions, keyed by call_sid)
+                 ├─▶ transcript  (turn structure, repeated identity prompts)
+                 ├─▶ audio       (dual-channel voice metrics)
+                 ├─▶ safety      (deterministic escalation / advice / prompt-disclosure signals)
+                 └─▶ judge       (LLM rubric grader)
+                         │ results ─▶ aggregator ─▶ one joined record per call + end-to-end latency
+        failures ─▶ calls.retry (attempt+1, exponential backoff) ─▶ calls.dlq after 3 attempts
+```
+
+Reliability properties, each covered by a test in `tests/test_pipeline.py`:
+
+- **Per-call ordering** – messages are keyed by `call_sid`, so one call always lands on one partition.
+- **Idempotent consumers** – a `(consumer group, event_id)` ledger makes redelivery harmless (at-least-once delivery).
+- **Bounded retries and a dead-letter queue** – transient failures retry with backoff; poison events stop after 3 attempts with the error attached.
+- **Offsets committed after publish** – a crash between processing and publishing re-delivers instead of losing the event.
+
+`pipeline/bus.py` has one contract with two implementations: an in-memory bus for tests and laptops, and
+`KafkaBus` on Apache Kafka (`docker-compose.kafka.yml`, KRaft, no ZooKeeper).
+
+**Measured scaling** (240 replayed events = 12 recorded calls × 20, judge stage modeled at 50 ms per call, Apple M3):
+
+| Workers per stage | Events/s | End-to-end p95 |
+|---|---|---|
+| 1 | 17.6 | 12.9 s |
+| 2 | 21.1 | 10.7 s |
+| 4 | 42.1 | 5.4 s |
+
+On a real broker (Apache Kafka 3.8.0, single KRaft node on the same laptop) the same replay completed all 240 events
+with none dead-lettered: **12.4 → 26.8 events/s** and end-to-end p95 **19.0 s → 8.5 s** going from 1 to 4 workers per stage
+(`docs/pipeline-scaling-2026-09-26.json`).
+
+In memory, four workers give 2.4x the throughput. Two workers barely help because 12 distinct call ids hash unevenly
+across 4 partitions (key skew), which is the partitioning trade-off keying by call buys you.
+
+The judge stage uses dry-run grades unless `PIPELINE_LIVE_JUDGE=1`, so replays spend nothing on API calls;
+safety signals are deterministic regex checks that flag calls for review, not verdicts.
+
+```bash
+python -m pipeline.run --bus memory --copies 20 --workers 4 --stage-delay-ms 50
+docker compose -f docker-compose.kafka.yml up -d && python -m pipeline.run --bus kafka --copies 20 --workers 4
+```
+
 ## Maintenance verification — September 11, 2026
 
 The original recorded-call findings remain historical evidence. The latest changes have **offline** tests; no new phone calls or live clinical validation were performed.

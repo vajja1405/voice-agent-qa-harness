@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-26",
+  "events": 240,
+  "source": "12 recorded calls x 20 replays",
+  "judge_stage_delay_ms": 50,
+  "kafka": "Apache Kafka 3.8.0, single KRaft node, native on Apple M3 (8 GB)",
+  "completed_all": true,
+  "dead_lettered": 0,
+  "rows": [
+    {
+      "bus": "memory",
+      "workers": 1,
+      "events_per_s": 17.6,
+      "e2e_p95_ms": 12929.1
+    },
+    {
+      "bus": "memory",
+      "workers": 2,
+      "events_per_s": 21.1,
+      "e2e_p95_ms": 10682.1
+    },
+    {
+      "bus": "memory",
+      "workers": 4,
+      "events_per_s": 42.1,
+      "e2e_p95_ms": 5353.5
+    },
+    {
+      "bus": "kafka",
+      "workers": 1,
+      "events_per_s": 12.4,
+      "e2e_p95_ms": 18995.7
+    },
+    {
+      "bus": "kafka",
+      "workers": 4,
+      "events_per_s": 26.8,
+      "e2e_p95_ms": 8545.3
+    }
+  ]
+}
